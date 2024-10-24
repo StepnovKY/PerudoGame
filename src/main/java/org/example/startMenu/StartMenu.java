@@ -1,9 +1,10 @@
 package org.example.startMenu;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class StartMenu {
-    public StartMenu() {
+    public StartMenu() throws IOException {
         boolean stopProcess = false;
         Scanner scanner = new Scanner(System.in);
 
@@ -18,7 +19,8 @@ public class StartMenu {
                     """);
             switch (scanner.nextLine()) {
                 case "1":
-                    //Начало игры (StartGame.java)
+                    //Начало игры (ChooseName.java)
+                    ChooseName chooseName = new ChooseName();
                     break;
                 case "2":
                     //Правила игры из файла rule.txt (Rules.java)

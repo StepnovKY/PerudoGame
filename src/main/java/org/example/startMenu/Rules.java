@@ -3,7 +3,7 @@ package org.example.startMenu;
 import java.io.*;
 
 public class Rules {
-    public Rules() {
+    public Rules() throws IOException {
         File file = new File("C:\\Users\\SaWLxx\\Desktop\\rules.txt");
         BufferedReader bufferedReader;
         try {
@@ -12,13 +12,7 @@ public class Rules {
             throw new RuntimeException(e);
         }
         String rules;
-        while (true) {
-            try {
-                if ((rules = bufferedReader.readLine()) == null)
-                    break;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        while ((rules = bufferedReader.readLine()) != null) {
             System.out.println(rules);
         }
     }
